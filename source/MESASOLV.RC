@@ -1,0 +1,27 @@
+#ifndef OS2_INCLUDED
+   #include <os2.h>
+#endif
+#include "mesasolv.h"
+
+DLGTEMPLATE ID_DLG_GOALSEEK LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Mesa Goal Seeker", ID_DLG_GOALSEEK, 7, 7, 187, 107, WS_VISIBLE,
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        ENTRYFIELD      "", DID_SETCELL, 96, 83, 81, 8, ES_MARGIN
+        ENTRYFIELD      "", DID_FINALVALUE, 96, 50, 81, 8, ES_MARGIN
+        ENTRYFIELD      "", DID_CHANGECELL, 96, 36, 81, 8, ES_MARGIN
+        ENTRYFIELD      "", DID_PRECISION, 96, 22, 81, 8, ES_MARGIN
+        AUTORADIOBUTTON "To Minimum", DID_MINIMUM, 11, 71, 72, 10,
+                        WS_TABSTOP
+        DEFPUSHBUTTON   "Start", DID_START, 51, 3, 40, 14
+        AUTORADIOBUTTON "To Maximum", DID_MAXIMUM, 11, 60, 72, 10,
+                        WS_TABSTOP
+        AUTORADIOBUTTON "To Value:", DID_VALUE, 11, 49, 72, 10, WS_TABSTOP
+        PUSHBUTTON      "Stop", DID_STOP, 97, 3, 40, 14, WS_DISABLED
+        CTEXT           "Name", DID_MODELNAME, 13, 96, 134, 8, DT_VCENTER
+        LTEXT           "Set Cell:", 115, 11, 83, 39, 8
+        LTEXT           "By Changeing Cell:", 106, 12, 36, 79, 8
+        LTEXT           "Answer Within:", 108, 11, 22, 63, 8
+    END
+END

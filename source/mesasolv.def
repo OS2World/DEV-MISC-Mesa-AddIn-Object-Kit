@@ -1,0 +1,23 @@
+;========================================================================
+; MESAFEED.DEF - DLL Mesa dll
+;========================================================================
+LIBRARY     MESASOLV INITINSTANCE TERMINSTANCE
+
+DESCRIPTION 'The Mesa Sample AddIn DLL'
+
+PROTMODE
+
+DATA        MULTIPLE NONSHARED READWRITE LOADONCALL
+
+CODE        LOADONCALL
+
+EXPORTS
+			AddInInit
+			AddInFree
+			
+IMPORTS
+			MESACORE.performAddInFunction
+			MESACORE.MFree
+			MESACORE.MMalloc
+			MESACORE.MRealloc
+
